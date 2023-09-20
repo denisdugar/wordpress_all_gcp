@@ -134,7 +134,10 @@ resource "google_compute_firewall" "allow-iap" {
     ports    = ["22"]
   }
   target_tags  = ["wordpress"]
-  source_ranges = ["0.0.0.0/0"]
+  source_ranges = [
+    "35.235.240.0/20",
+    "35.235.192.0/20"
+  ]
 }
 
 resource "google_compute_firewall" "sql" {
